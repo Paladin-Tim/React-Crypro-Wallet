@@ -1,0 +1,45 @@
+import { Divider, Tag, Typography } from "antd";
+import CoinInfo from "./CoinInfo";
+
+export default function CoinInfoModal({ coin }) {
+  return (
+    <>
+      <CoinInfo coin={coin} withSymbol />
+      <Divider />
+      <Typography.Paragraph>
+        <Typography.Text strong>1 hour: </Typography.Text>
+        <Tag color={coin.priceChange1h > 0 ? "green" : "red"}>
+          {coin.priceChange1h}%
+        </Tag>
+        <Typography.Text strong>1 day: </Typography.Text>
+        <Tag color={coin.priceChange1d > 0 ? "green" : "red"}>
+          {coin.priceChange1d}%
+        </Tag>
+        <Typography.Text strong>1 week: </Typography.Text>
+        <Tag color={coin.priceChange1w > 0 ? "green" : "red"}>
+          {coin.priceChange1w}%
+        </Tag>
+      </Typography.Paragraph>
+
+      <Typography.Title level={4}>
+        <Typography.Text strong>Current price: </Typography.Text>
+        {coin.price.toFixed(4)}$
+      </Typography.Title>
+
+      <Typography.Paragraph>
+        <Typography.Text strong>Price BTC: </Typography.Text>
+        {coin.priceBtc.toFixed(4)}
+      </Typography.Paragraph>
+      <Typography.Paragraph>
+        <Typography.Text strong>Market cap: </Typography.Text>
+        {coin.marketCap.toFixed(4)}$
+      </Typography.Paragraph>
+      {coin.contractAddress && (
+        <Typography.Paragraph>
+          <Typography.Text strong>Contract adress: </Typography.Text>
+          {coin.contractAddress}
+        </Typography.Paragraph>
+      )}
+    </>
+  );
+}

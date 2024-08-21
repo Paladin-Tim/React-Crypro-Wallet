@@ -1,38 +1,122 @@
-.App {
+.layout__container {
+  min-height: 100vh;
+  background: #001529;
+}
+
+.layout__header {
   text-align: center;
+  height: 60px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header__select {
+  width: 250px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (max-width: 768px) {
+  .layout__content-wrapper {
+    flex-direction: column-reverse !important;
+  }
+  .layout__sider {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+  }
+  .layout__content {
+    width: 100% !important;
+    padding-bottom: 2rem !important;
+  }
+  .content__loader {
+    flex: 1 0 300px !important;
+  }
+  .sider__asset-card__skeleton-wrapper {
+    width: 100% !important;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.layout__content-wrapper {
+  background: none;
+  flex-direction: row;
+}
+
+.layout__content {
+  text-align: center;
+  min-height: calc(100vh - 60px);
+  color: #fff;
+  background-color: #001529;
+  padding: 1rem 1rem 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.content__title {
+  text-align: left;
+  color: #fff !important;
+}
+
+.content__portfolio-chart {
+  flex: 1 0 0;
+}
+
+.content__doughnut-wrapper {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 1rem;
+  height: 400px;
 }
 
-.App-link {
-  color: #61dafb;
+.content__loader {
+  flex: 1 0 0;
+  background: transparent;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ant-spin-dot-item {
+  background-color: #fff !important;
+}
+
+.layout__sider {
+  padding: 1rem 1rem 0;
+}
+
+.sider__asset-card {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.sider__asset-card__skeleton-wrapper {
+  width: 30%;
+  padding: 1rem 1rem 0;
+}
+
+.sider__asset-card__skeleton {
+  min-height: 250px;
+}
+
+.asset-card__button-remove {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+ul.slick-dots {
+  top: -0.8rem !important;
+}
+
+.drawer__add-asset-form {
+  max-width: 600px;
+}
+
+.add-asset-form__input {
+  width: 100% !important;
+}
+
+.modal__coin-info {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.coin-info__symbol {
+  font-size: 1rem;
 }
